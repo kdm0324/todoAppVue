@@ -5,7 +5,7 @@ export const useStorage = () => {
   const storage_obj = reactive({ storage_id: 0 });
   const loadTodos = (initTodos) => {
     let temp_todos = JSON.parse(localStorage.getItem(KEY) || "[]");
-    temp_todos.foreach((todo, idx) => {
+    temp_todos.forEach((todo, idx) => {
       todo.id = idx;
     });
     storage_obj.storage_id = temp_todos.length;
